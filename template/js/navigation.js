@@ -1,4 +1,7 @@
 $(function () {
+    /**
+     *  Collapse / uncollapse menu
+     */
     $('#mainNav ul').mouseover(function (e) {
         e.stopPropagation();
         var depth = 2; // TODO calculate the depth from position of $(this) in DOM
@@ -10,7 +13,9 @@ $(function () {
             'left': '3em'});
     });
 
-
+    /**
+     *  Open / close menu
+     */
     $('#toggleMenu').click(function (e) {
         e.preventDefault();
 
@@ -58,6 +63,26 @@ $(function () {
         if (!$(this).val()) {
             searchInput.animate({ 'width': '0' }, function () {
                 searchInput.addClass('hidden');
+            });
+        }
+    });
+
+    /**
+     *  Title shrink on scroll
+     */
+    var scrollPos = 0;
+
+    $(document).on('scroll', function (e) {
+        var oldScrollPos = scrollPos;
+        scrollPos = $(document.body).scrollTop();
+        var scrollingUp = scrollPos < oldScrollPos;
+        if (scrollingUp) {
+            $('header').css({
+                'top': '0'
+            });
+        } else {
+            $('header').css({
+                'top': -1 * scrollPos + 'px'
             });
         }
     });
