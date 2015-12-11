@@ -263,6 +263,7 @@ h2 {
 
 section div {
     display: block;
+    max-width: 64em;
 }
 
 section div .full-content {
@@ -285,4 +286,13 @@ section div .tldr {
 select {
     padding: .5em;
     margin: .5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 1em 1em 0em 1em;
+    padding: .25em 0;
+    border-bottom: thin solid #aaa;
+    max-width: 43em;
 }
