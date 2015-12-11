@@ -21,6 +21,7 @@ body {
     padding: 0;
     margin: 3em 0 0 0;
     list-style-type: none;
+    transition: left .25s ease-in-out;
 }
 
 .offcanvas a {
@@ -92,6 +93,20 @@ body {
     background-color: #999;
 }
 
+.offcanvas ul ul ul ul {
+    background-color: #999;
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 3em;
+}
+
+.offcanvas ul ul ul ul a.active {
+    background-color: #bbb;
+}
+
 main, header {
     position: absolute;
     left: 3em;
@@ -146,9 +161,11 @@ main {
     border: none;
     border-bottom: thin solid #fff;
     font-size: 1.25em;
-    padding: .25em;
+    padding: .25em 0;
     margin: .25em;
     color: #fff;
+    box-sizing: border-box;
+    transition: width .25s ease-in-out;
 }
 
 .search input:focus {

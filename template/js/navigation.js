@@ -1,4 +1,16 @@
 $(function () {
+    $('#mainNav ul').mouseover(function (e) {
+        e.stopPropagation();
+        var depth = 2; // TODO calculate the depth from position of $(this) in DOM
+        $(this).children().children('ul').css({
+            'left': (22.5 - depth * 3) + 'em'});
+    }).mouseout(function (e) {
+        e.stopPropagation();
+        $(this).find('ul').css({
+            'left': '3em'});
+    });
+
+
     $('#toggleMenu').click(function (e) {
         e.preventDefault();
 
@@ -17,5 +29,36 @@ $(function () {
             });
         }
         $('#mainNav').toggleClass('open');
+    });
+
+
+    /** Search input:
+     *  - Show on button click
+     *  - Hide on loose focus if empty
+     *  - Submit when visible an button is clicked
+     */
+    var searchInput = $('#searchbox input')
+        .css({ 'width': '0' })
+        .addClass('hidden');
+
+    $('#searchbox button').click(function (e) {
+        if (searchInput.hasClass('hidden')) {
+            e.preventDefault();
+            searchInput.css({ 'width': 'auto' });
+            var targetWidth = searchInput.width();
+            searchInput.css({ 'width': '0' });
+            searchInput.animate({ 'width': targetWidth + 'px' }, function () {
+                searchInput.removeClass('hidden');
+                searchInput.focus();
+            });
+        }
+    });
+
+    searchInput.on('blur', function (e) {
+        if (!$(this).val()) {
+            searchInput.animate({ 'width': '0' }, function () {
+                searchInput.addClass('hidden');
+            });
+        }
     });
 });
