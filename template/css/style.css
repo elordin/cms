@@ -1,0 +1,234 @@
+body {
+    font-family: Segoe UI, Roboto, Sans-Serif;
+    margin: 0;
+}
+
+.offcanvas {
+    background-color: #333;
+    position: fixed;
+    height: 100%;
+    width: 3em;
+    top: 0;
+    overflow: hidden;
+    z-index: 8;
+}
+
+.offcanvas.open {
+    width: 22.5em;
+}
+
+.offcanvas ul {
+    padding: 0;
+    margin: 3em 0 0 0;
+    list-style-type: none;
+}
+
+.offcanvas a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    vertical-align: middle;
+    padding: 0 2em 0 0;
+    min-width: 12em;
+    white-space: nowrap;
+}
+
+.offcanvas a.active {
+    border-left: none;
+}
+
+.open-menu {
+    position: absolute;
+    right: -.25em;
+    padding: 0;
+    margin: 0;
+    z-index: 16;
+    color: #fff;
+}
+
+.offcanvas .open-menu i::before {
+    content: '\f0c9';
+}
+
+.offcanvas.open .open-menu i::before {
+    content: '\f00d';
+}
+
+.offcanvas a i, .open-menu i {
+    font-size: 1.5em;
+    display: inline-block;
+    padding: .5em .75em .5em .5em;
+}
+
+.offcanvas a.active {
+    background-color: #555;
+}
+
+.offcanvas ul ul {
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 3em;
+}
+
+.offcanvas ul ul a.active {
+    background-color: #777;
+}
+
+.offcanvas ul ul ul {
+    background-color: #777;
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 3em;
+}
+
+.offcanvas ul ul ul a.active {
+    background-color: #999;
+}
+
+main, header {
+    position: absolute;
+    left: 3em;
+    right: 0;
+}
+
+@media (min-width: 64em) {
+    .offcanvas {
+        width: 22.5em;
+    }
+
+    main, header {
+        left: 22.5em;
+    }
+
+    .open-menu {
+        display: none;
+    }
+}
+
+header {
+    top: 0;
+    background-color: #E53935;
+    height: 3em;
+    vertical-align: bottom;
+    display: flex;
+}
+
+h1 {
+    display: inline-block;
+    color: #fff;
+    font-weight: normal;
+    font-size: 1em;
+    padding: 0 1em;
+    line-height: 3;
+    margin: 0;
+    flex: 100%;
+}
+
+main {
+    top: 3em;
+}
+
+.search, .language-select {
+    display: inline-block;
+    flex: 1;
+    white-space: nowrap;
+}
+
+.search input {
+    background-color: transparent;
+    border: none;
+    border-bottom: thin solid #fff;
+    font-size: 1.25em;
+    padding: .25em;
+    margin: .25em;
+    color: #fff;
+}
+
+.search input:focus {
+    outline: none;
+    background-color: #fff;
+    color: #333;
+}
+
+.search button {
+    background-color: transparent;
+    color: #fff;
+    padding: .25em;
+    font-size: 1.25em;
+    border: none;
+    margin-right: .5em;
+}
+
+h2 {
+    background-color: #F44336;
+    margin: 0;
+    font-size: 4em;
+    padding: 2em .25em .25em .5em;
+    font-weight: 100;
+    color: #fff;
+}
+
+.breadcrumb {
+    height: 3em;
+    background-color: #eee;
+}
+
+.breadcrumb ul {
+    padding: .5em 1.5em;
+    margin: 0;
+    list-style-type: none;
+}
+
+.breadcrumb li {
+    display: inline-block;
+}
+
+.breadcrumb a {
+    padding: .25em;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+.breadcrumb a::before {
+    content: '\f0da';
+    padding-right: .5em;
+    font-family: FontAwesome;
+}
+
+.breadcrumb a:hover {
+    border-bottom: thin dotted #333;
+}
+
+section div {
+    display: block;
+}
+
+section div .full-content {
+    display: block;
+    width: 60%;
+    margin: 0;
+    padding: 1.5em;
+    box-sizing: border-box;
+}
+
+section div .tldr {
+    display: block;
+    width: 40%;
+    margin: 0;
+    padding: 1.5em;
+    box-sizing: border-box;
+    float: right;
+}
+
+select {
+    padding: .5em;
+    margin: .5em;
+}
